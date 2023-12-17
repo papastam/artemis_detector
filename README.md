@@ -1,4 +1,4 @@
-# Prequesites
+# Prerequisites
 - Go 1.21+
 
 # Compile
