@@ -11,8 +11,9 @@ go build -o artemis_detector main.go utils.go
 The application has two running modes:
 - **detect_all**: In this mode the detector will detect hijacks for every AS possible.
 - **detect_as**: In this mode the detector will detect hijacks for a specified AS, given to it using the __--asn 〈AS#〉__ flag
+- **active**: The active mode executes the hijack detection algorithm in given intervals specified using the __--interval 〈interval〉__ flag for a given AS specified using the __--asn 〈AS#〉__ flag. When the detector detets a hijack for the specified AS, it will use the mitigation script, specified using the __--mitigation_script_path 〈script_path〉__ flag, to mitigate the hijack. The user can stop the detector using the __Ctrl+C__ termination signal and an output file will be created.
 
-## Flags
+## General Flags
 - **--updates** \<File(.csv) | Dir\>: The BGP updates file/directory
 - **--input_type** \<”file”|”directory”\>: The type of input you are providing the tool with _(default:”file”)_
 - **--prefixes** 〈prefixes_file.txt〉: The file containing the legal prefixes of each AS.
